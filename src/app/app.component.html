@@ -1,15 +1,7 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Awesome application
-  </h1>
-</div>
-<main class="container">
-  <div class="list">
-    <ul>
-      <li>First</li>
-      <li>Second</li>
-    </ul>
-  </div>
-  <div class="details">First user</div>
+<h1 class="title text-center">
+  Awesome application
+</h1>
+<main class="container d-flex flex-wrap">
+  <app-users class="list"></app-users>
+  <app-user-detail *ngIf="selectedUser" class="details ml-4" [user]="selectedUser"></app-user-detail>
 </main>

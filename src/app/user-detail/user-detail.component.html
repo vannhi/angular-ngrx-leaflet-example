@@ -1,0 +1,79 @@
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" (click)="activateProfileTab()">
+    <a
+      class="nav-link"
+      [class.active]="activeTab === 'PROFILE'"
+      id="profile-tab"
+      data-toggle="tab"
+      href="#"
+      role="tab"
+      aria-controls="profile"
+      [attr.aria-selected]="activeTab === 'PROFILE'"
+      >Profile</a
+    >
+  </li>
+  <li class="nav-item" (click)="activateLocationTab()">
+    <a
+      class="nav-link"
+      [class.active]="activeTab === 'LOCATION'"
+      id="location-tab"
+      data-toggle="tab"
+      href="#"
+      role="tab"
+      aria-controls="location"
+      [attr.aria-selected]="activeTab === 'LOCATION'"
+      >Location</a
+    >
+  </li>
+</ul>
+<div class="tab-content pt-4" id="myTabContent">
+  <div
+    class="tab-pane fade"
+    [ngClass]="{ 'active show': activeTab === 'PROFILE' }"
+    id="profile"
+    role="tabpanel"
+    aria-labelledby="profile-tab"
+  >
+    <form (submit)="saveForm()">
+      <div><img [src]="user.picture.large" /></div>
+      <div class="form-group">
+        <label for="first-name">First name</label>
+        <input class="form-control" id="first-name" name="firstName" [(ngModel)]="user.name.first" />
+      </div>
+      <div class="form-group">
+        <label>Last name</label>
+        <input class="form-control" name="lastName" [(ngModel)]="user.name.last" />
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input class="form-control" name="email" [(ngModel)]="user.email" />
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input class="form-control" name="phone" [(ngModel)]="user.phone" />
+      </div>
+      <div class="form-group">
+        <label>Cell</label>
+        <input class="form-control" name="cell" [(ngModel)]="user.cell" />
+      </div>
+      <div class="form-group">
+        <label>Latitude</label>
+        <input class="form-control" name="latitude" [(ngModel)]="user.location.coordinates.latitude" />
+      </div>
+      <div class="form-group">
+        <label>Longitude</label>
+        <input class="form-control" name="longitude" [(ngModel)]="user.location.coordinates.longitude" />
+      </div>
+      <input class="btn btn-primary" type="submit" value="Save" />
+    </form>
+  </div>
+  <div
+    class="tab-pane fade"
+    [ngClass]="{ 'active show': activeTab === 'LOCATION' }"
+    id="location"
+    role="tabpanel"
+    aria-labelledby="location-tab"
+  >
+    <div id="map"></div>
+  </div>
+</div>
