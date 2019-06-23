@@ -2,7 +2,7 @@
   <h2 class="h4">My users</h2>
   <input class="form-control mb-4 p-1" type="text" (input)="search = $event.target.value" placeholder="Name" />
   <ul class="list-group list-group-flush">
-    <cdk-virtual-scroll-viewport style="height: 100vh" itemSize="20">
+    <cdk-virtual-scroll-viewport style="height: 80vh" itemSize="20">
       <li
         class="list-group-item list-group-item-action px-0 py-2"
         *cdkVirtualFor="let user of users | filterByName: search"
