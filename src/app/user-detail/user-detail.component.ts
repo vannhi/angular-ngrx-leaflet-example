@@ -64,11 +64,13 @@ export class UserDetailComponent implements OnDestroy {
     }
   }
 
-  activateProfileTab(): void {
+  activateProfileTab($event: Event): void {
+    $event.preventDefault();
     this.activeTab = Tab.PROFILE;
   }
 
-  activateLocationTab(): void {
+  activateLocationTab($event: Event): void {
+    $event.preventDefault();
     this.activeTab = Tab.LOCATION;
     setTimeout(() => {
       this.map.invalidateSize();
