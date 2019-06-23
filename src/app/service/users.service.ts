@@ -9,6 +9,6 @@ export class UsersService {
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<User[]> {
-    return this.http.get<User[]>('/assets/res10000.json');
+    return this.http.get<User[]>('assets/res10000.json');
   }
 }
