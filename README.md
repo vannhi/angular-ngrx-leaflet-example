@@ -9,3 +9,7 @@ Static data in `src/assets/*.json` comes from [Random user generator](https://ra
 ## Css
 
 This application uses [Bootstrap](https://getbootstrap.com/) for css without js as I don't want to add jQuery to an Angular project.
+
+## Where is Angular router
+
+Well, I do not need router for this kind of application
